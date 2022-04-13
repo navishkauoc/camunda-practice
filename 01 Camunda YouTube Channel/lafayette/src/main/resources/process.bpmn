@@ -6,10 +6,6 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1fp17al" sourceRef="StartEvent_1" targetRef="say-hello" />
     <bpmn:sequenceFlow id="Flow_17tqjfq" sourceRef="say-hello" targetRef="Activity_0fs0ytx" />
-    <bpmn:userTask id="Activity_1720182" name="Overthrow the monarchy">
-      <bpmn:incoming>Flow_16gt1th</bpmn:incoming>
-      <bpmn:outgoing>Flow_0gr4ohh</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:endEvent id="Event_1br19e3" name="Lafayette has helped a Revolution">
       <bpmn:incoming>Flow_0gr4ohh</bpmn:incoming>
     </bpmn:endEvent>
@@ -23,11 +19,42 @@
       <bpmn:incoming>Flow_17tqjfq</bpmn:incoming>
       <bpmn:outgoing>Flow_16gt1th</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_1720182" name="Overthrow the monarchy">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="text">Hello World</camunda:inputParameter>
+            <camunda:inputParameter name="subject">Test</camunda:inputParameter>
+            <camunda:inputParameter name="to">navishka.randika@gmail.com</camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>mail-send</camunda:connectorId>
+        </camunda:connector>
+        <camunda:field name="to">
+          <camunda:string>navishka.randika@gmail.com</camunda:string>
+        </camunda:field>
+        <camunda:field name="subject">
+          <camunda:string>Test</camunda:string>
+        </camunda:field>
+        <camunda:field name="text">
+          <camunda:string>Hello World</camunda:string>
+        </camunda:field>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_16gt1th</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gr4ohh</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="lafayette-process">
+      <bpmndi:BPMNEdge id="Flow_16gt1th_di" bpmnElement="Flow_16gt1th">
+        <di:waypoint x="710" y="117" />
+        <di:waypoint x="790" y="117" />
+        <di:waypoint x="790" y="118" />
+        <di:waypoint x="870" y="118" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0gr4ohh_di" bpmnElement="Flow_0gr4ohh">
-        <di:waypoint x="970" y="117" />
+        <di:waypoint x="970" y="118" />
+        <di:waypoint x="1001" y="118" />
+        <di:waypoint x="1001" y="117" />
         <di:waypoint x="1032" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_17tqjfq_di" bpmnElement="Flow_17tqjfq">
@@ -38,12 +65,11 @@
         <di:waypoint x="238" y="117" />
         <di:waypoint x="380" y="117" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_16gt1th_di" bpmnElement="Flow_16gt1th">
-        <di:waypoint x="710" y="117" />
-        <di:waypoint x="870" y="117" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Activity_0xq3rns_di" bpmnElement="Activity_1720182">
-        <dc:Bounds x="870" y="77" width="100" height="80" />
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="202" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="175" y="142" width="90" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1br19e3_di" bpmnElement="Event_1br19e3">
         <dc:Bounds x="1032" y="99" width="36" height="36" />
@@ -51,17 +77,14 @@
           <dc:Bounds x="1017" y="142" width="67" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0tlz7k4_di" bpmnElement="Activity_0fs0ytx">
-        <dc:Bounds x="610" y="77" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0jr0nuh_di" bpmnElement="say-hello">
         <dc:Bounds x="380" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="202" y="99" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="175" y="142" width="90" height="40" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="Activity_0tlz7k4_di" bpmnElement="Activity_0fs0ytx">
+        <dc:Bounds x="610" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13kewmc_di" bpmnElement="Activity_1720182">
+        <dc:Bounds x="870" y="78" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
   public static void main(String... args) {
-    LogFactory.useSlf4jLogging();
+//    LogFactory.useSlf4jLogging();
     SpringApplication.run(Application.class, args);
   }
 

@@ -18,20 +18,36 @@ spring:
     hibernate:
       ddl-auto: update
 
+#mail:
+#  transport:
+#    protocol: smtp
+#  smtp:
+#    host: smtp.gmail.com
+#    port: 465
+#    auth: true
+#    ssl:
+#      enable: true
+#    socketFactory:
+#      port: 465
+#      class: javax.net.ssl.SSLSocketFactory
+#  store:
+#    protocol: imaps
+#  imaps:
+#    host: imap.gmail.com
+#    port: 993
+#    timeout: 10000
+#  imap:
+#      partialfetch: false
+#  user: navishkatest@gmail.com
+#  password: evjowagpbcgjikxy
 
-#logging.level.s7.Application=WARN
-#logging.level.org.springframework.web=ERROR
-#logging.level.com.javatechie.spring.logging.api=DEBUG
 
-# Logging pattern for the console
-#logging.pattern.console= "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#  mail.poll.folder=INBOX
+#
+#  mail.sender=USER@gmail.com
+#  mail.sender.alias=SENDER_NAME
 
-#logging pattern for file
-#logging.pattern.file= "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#  mail.attachment.download=true
+#  mail.attachment.path=attachments
 
-#logging.file=C:/Users/bahota/Desktop/spring-boot-logging/api.log
-#logging:
-#  file:
-#    path: F:\Logs
-#  config: classpath:logback.xml
 
