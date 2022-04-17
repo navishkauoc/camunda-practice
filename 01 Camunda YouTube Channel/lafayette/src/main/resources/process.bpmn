@@ -48,10 +48,10 @@
       <bpmn:outgoing>Flow_1hbg147</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_10atwd9" name="France" sourceRef="Gateway_1ech002" targetRef="Activity_0fs0ytx">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#(country == 'France')</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{country == 'France'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1hbg147" name="America" sourceRef="Gateway_1ech002" targetRef="Activity_1yc0i0w">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#(country == 'America')</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{country == 'America'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:exclusiveGateway id="Gateway_0sh2835">
       <bpmn:incoming>Flow_16gt1th</bpmn:incoming>
